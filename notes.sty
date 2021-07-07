@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{notes}[2015/06/08 Notes package made my me]
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{xcolor}
+\RequirePackage{geometry}
+\RequirePackage{sectsty}
+
+\definecolor{awesome}{rgb}{1.0, 0.13, 0.32}
+
+\geometry{a4paper, portrait, margin=1in}
+
+\sectionfont{\color{awesome}}
+
+\newenvironment{numbered}[1]
+	{\section*{#1}\itshape \begin{enumerate}
+	}
+	{
+	\end{enumerate}	
+	}
+
+\newenvironment{bullets}[1]
+{\section*{#1}\itshape \begin{itemize}
+	}
+	{
+	\end{itemize}	
+}
+
+\let\oldtitle\title
+\renewcommand{\title}[2]{\oldtitle{\Huge\color{awesome}{#1}} \author{#2} \date{ }}
